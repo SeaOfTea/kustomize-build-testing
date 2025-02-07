@@ -1,6 +1,6 @@
-Showing that deployment1 and deployment2 will create the same deployment
+This shows how we can compare two kustomize deployments to see if they are the same or not.
 
-* cd deployment1
-* kustomize build .
-* cd ../deployment2
-* kustomize build .
+```bash
+> diff <(kustomize build deployment1) <(kustomize build deployment2); if [ $? -eq 0 ]; then echo "Success"; else echo "Failure"; fi
+> Success
+```
