@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+  - name: nginx
+    digest: sha256:521349f426b64aa9495577c849349b5baf4a139a4824e9643641e52981934949
+resources:
+- deployment.yaml
