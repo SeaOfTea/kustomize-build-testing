@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+diff <(kustomize build $1) <(kustomize build $2)
+if [ $? -eq 0 ]; then
+  echo "No differences"
+elif [ $? -eq 1 ]; then
+  echo "Differences found"
+else
+  echo "Error"
+fi
